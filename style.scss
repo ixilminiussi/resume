@@ -1,0 +1,484 @@
+@use 'sass:color';
+
+$yellow: #E6C229;
+$blue: #48A9A6;
+$purple: #9B79A4;
+$red: #A05C7B;
+
+$darkerest: #30323D;
+$darker: #3f4150;
+$dark: #515467;
+$accent: $yellow;
+$complement: $purple;
+/*$complement: #D0E4F1; */
+$lightish: #A4A7B7;
+$light: #BABDC9;
+$lighter: #E8E9ED;
+$lightest: #F4F4F6;
+
+html * {
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.dot {
+    height: 1.5mm;
+    width: 1.5mm;
+    margin-top: 1mm;
+    margin-left: 2mm;
+    margin-right: 3mm;
+    border-width: 0;
+    background-color: $accent;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
+}
+
+/* =================================== */
+/* ======================== PAGES ====*/
+/* =================================== */
+.html {
+    box-sizing: border-box;
+}
+
+#print {
+    position: absolute;
+    top: 422mm;
+    left: 0;
+    width: 297mm;
+    padding: 5mm;
+    background-color: $darker;
+    border-color: $accent;
+    border: 2mm;
+    border-radius: 2mm;
+    color: $accent;
+    font-size: 7mm;
+    text-transform: uppercase;
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    height: 16.54in;
+    width: 11.69in;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eee;
+    box-sizing: border-box;
+}
+
+
+/* =================================== */
+/* ============== FORMATTING LEFT ==== */
+/* =================================== */
+
+.left {
+    /* VARIABLES */
+    /* =============================== */
+    $very-top: 8mm;
+    $section-gap: 10mm;
+    $title-bottom: 6mm;
+
+    $block-gap: 5mm;
+    $block-sides: 7mm;
+    $skill-gap: 4mm;
+    $languages-gap: 4mm;
+    /* =============================== */
+
+    width: 34%;
+    height: 100%;
+    background-color: $darkerest;
+    box-sizing: border-box;
+
+    img {
+        width: 100%;
+        margin-bottom: $very-top;
+    }
+
+	.category {
+        color: $lightest;
+        font-size: 8mm;
+        font-weight: 200;
+        width: 100%;
+        margin: 0;
+        margin-left: 10mm;
+        text-transform: uppercase;
+        letter-spacing: 1mm;
+    }
+
+	hr:not(.dot) {
+        margin-left: 50px;
+        background-color: $accent;
+        border-color: $accent;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        height: 1px;
+        margin-bottom: $title-bottom;
+    }
+
+    section:not(.contact-information) + section:not(.contact-information) {
+        margin-top: $section-gap;
+    }
+
+	section:not(.contact-information) {
+        .block + .block {
+            margin-top: $block-gap;
+        }
+
+	    .block {
+            margin-left: $block-sides;
+            margin-right: $block-sides;
+ 		    
+            em {
+                font-size: 4.5mm;
+                margin: 0;
+                font-style: normal;
+                color: $lightish;
+            }
+
+		    h2 {
+                font-size: 6mm;
+                margin: 0;
+                color: $lightest;
+            }
+
+		    h3 {
+                width: 100%;
+                font-size: 5mm;
+                font-weight: 100;
+                margin: 0;
+                color: $accent;
+            }
+
+		    p {
+                margin: 0;
+                margin-top: 2mm;
+                margin-left: 2mm;
+                color: $light;
+            }
+
+		    u {
+                color: $lighter;
+                font-size: 3.7mm;
+                text-decoration: none;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 2mm;
+                margin-left: 2mm;
+
+                b {
+                    margin-left: 2mm;
+                }
+            }
+
+            .bullet-points {
+                list-style-type: disc;
+                column-count: 2;
+            }
+
+            .list {
+                list-style-type: none;
+            }
+
+            li + li {
+                margin-top: 1.5mm;
+            }
+
+		    li {
+                font-size: 5mm;
+                color: $accent;
+
+                span {
+                    font-size: 5mm;
+                    color: $light;
+                }
+            }
+        }
+    }
+
+    .skill {
+        .block + .block {
+            margin-top: $skill-gap;
+        }
+
+        .block {
+            margin: 5mm;
+
+            p {
+                font-size: 4mm;
+
+                b {
+                    color: $accent;
+                    font-size: 5mm;
+                }
+            }
+        }
+    }
+
+    .languages {
+        .block + .block {
+            margin-top: $languages-gap;
+        }
+
+        .block .rating {
+            width: 100%;
+            display: flex;
+            font-size: 5mm;
+
+            p {
+                margin-right: auto;
+                margin-top: 0.5mm;
+                font-size: 7mm;
+                color: $lightest;
+            }
+
+            svg {
+                width: 8mm;
+                height: 8mm;
+                margin-left: 2mm;
+            }
+                    
+            .full {
+                fill: $accent;
+            }
+
+            .empty {
+                fill: $dark;
+            }
+        }
+    }
+}
+
+/* =================================== */
+/* ============= FORMATTING RIGHT ==== */
+/* =================================== */
+.right {
+    /* VARIABLES */
+    /* =============================== */
+    $very-top: 12mm;
+    $section-gap: 6mm;
+    $title-bottom: 10mm;
+
+    $block-gap: 10mm;
+    $block-sides: 10mm;
+    $grid-gap: 6mm;
+    /* =============================== */
+
+    width: 66%;
+    height: 100%;
+    box-sizing: border-box;
+    background: $lightest;
+
+    /* BANNER */
+    .banner {
+        background: linear-gradient(160deg, $accent, color.change($accent, $lightness: 75%));
+        width: 100%;
+        margin-top: 5mm;
+        margin-bottom: $very-top;
+        padding-top: 3mm;
+        padding-bottom: 7mm;
+        box-sizing: border-box;
+
+        .full-name {
+            display: flex;
+            margin: 0;
+            margin-top: 8mm;
+            font-size: 7mm;
+            text-transform: uppercase;
+            
+            .first-name {
+                margin: 0;
+                margin-left: 10mm;
+                font-weight: 900;
+            }
+
+            .last-name {
+                margin: 0;
+                margin-left: 7mm;
+                font-weight: 100;
+            }
+        }
+
+        h2 {
+            margin-left: 10mm;
+            margin-top: 2mm;
+            font-size: 6mm;
+            font-weight: 50;
+            color: $darker;
+            letter-spacing: .5mm;
+            text-transform: uppercase;
+        }
+    }
+
+    section + section {
+        margin-top: $section-gap;
+    }
+
+    section {
+        .category {
+            color: $darkerest;
+            margin: 0;
+            margin-left: 10mm;
+            font-size: 8mm;
+            font-weight: 200;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1mm;
+        }
+
+        hr:not(.dot) {
+            margin-left: 50px;
+            margin-right: 50px;
+            height: 2px;
+            background-color: $darkerest;
+            border-color: $darkerest;
+            border-radius: 10px;
+            margin-bottom: $title-bottom;
+        }
+
+        .block + .block {
+            margin-top: $block-gap;
+        }
+
+        .block {
+            margin-left: $block-sides;
+            margin-right: $block-sides;
+            display: flex;
+
+            em {
+                font-size: 5.5mm;
+                margin: 0;
+                font-weight: 100;
+                width: 20%;
+                font-style: normal;
+                color: $dark;
+            }
+
+            div {
+                width: 100%;
+            }
+
+            h2 {
+                font-size: 5.5mm;
+                margin: 0;
+                color: $darkerest;
+            }
+
+            h3 {
+                font-size: 5mm;
+                margin: 0;
+                color: $darker;
+                font-size: 4.5mm;
+            }
+
+            p {
+                margin: 0;
+                margin-top: 3mm;
+                color: $dark;
+                font-size: 4.5mm;
+            }
+
+            u {
+                color: $dark;
+                font-size: 3.7mm;
+                text-decoration: none;
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 2mm;
+
+                b {
+                    margin-right: 2mm;
+                }
+            }
+
+            .bullet-points {
+                list-style-type: disc;
+            }
+
+            .list {
+                list-style-type: none;
+            }
+
+            li + li {
+                margin-top: 2mm;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+
+                p {
+                    color: $dark;
+                    margin: 0;
+                    margin-left: 5mm;
+                }
+
+                span {
+                    color: color-mix(in srgb, $lightish 65%, $darker);
+                    width: 25mm;
+                }
+            } 
+        }
+
+        .grid {
+            display: flex;
+            flex-flow: column wrap;
+            margin-left: 8mm;
+            margin-right: 10mm;
+            gap: $grid-gap;
+            
+            em {
+                display: none;
+            }
+        
+            .block {
+                width: 45%;
+                background: linear-gradient(150deg, color.change($complement, $lightness: 90%), desaturate(color.change($accent, $lightness: 93%), 20%));
+                margin: 0;
+                padding: 3mm;
+                border-radius: 3mm;
+            }
+        }
+    }
+}
+
+
+
+/* =================================== */
+/* ========== CONTACT INFORMATION ==== */
+/* =================================== */
+$final-gap: 18px;
+$line-height: 11.8mm;
+
+.contact-information {
+    margin-top: $final-gap;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.contact-information span {
+    margin: 0;
+    height: $line-height;
+    vertical-align: middle;
+    background-color: $dark;
+    color: $lightest;
+}
+
+.contact-information svg {
+    fill: $lightest;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    height: $line-height;
+    padding-left: 8mm;
+    padding-right: 6mm;
+    background-color: $accent;
+}
