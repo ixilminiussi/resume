@@ -89,10 +89,10 @@ a {
     /* VARIABLES */
     /* =============================== */
     $very-top: 2rem;
-    $section-gap: 2.6rem;
+    $section-gap: 3rem;
     $title-bottom: 1.4rem;
 
-    $block-gap: 1.6rem;
+    $block-gap: 1.8rem;
     $block-sides: 7mm;
     $skill-gap: 1rem;
     $languages-gap: 4mm;
@@ -183,23 +183,53 @@ a {
             .bullet-points {
                 list-style-type: disc;
                 column-count: 2;
+
+                li + li {
+                    margin-top: 1.5mm;
+                }
+
+                li {
+                    font-size: 5mm;
+                    color: $accent;
+
+                    span {
+                        font-size: 5mm;
+                        color: $light;
+                    }
+                }
             }
 
             .list {
                 list-style-type: none;
-            }
+                margin: 0;
+                margin-left: 1rem;
+                margin-top: .6rem;
+                margin-bottom: .6rem;
+                padding: 0;
+                font-size: 12pt;
 
-            li + li {
-                margin-top: 1.5mm;
-            }
+                li {
+                    margin: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
 
-		    li {
-                font-size: 5mm;
-                color: $accent;
+                    span {
+                        margin: 0;
+                        white-space: nowrap;
+                        line-height: 1;
+                color: $lighter;
+                    }
 
-                span {
-                    font-size: 5mm;
-                    color: $light;
+                    p {
+                        margin: 0;
+                        margin-left: 1rem;
+                color: $lighter;
+                    }
+                }
+
+                li + li {
+                    margin-top: .4rem;
                 }
             }
         }
@@ -264,13 +294,13 @@ a {
 .right {
     /* VARIABLES */
     /* =============================== */
-    $very-top: 1rem;
-    $section-gap: 1.5rem;
+    $very-top: 2rem;
+    $section-gap: 3rem;
     $title-bottom: 2.5rem;
 
-    $block-gap: 10mm;
-    $block-sides: 10mm;
-    $grid-gap: 6mm;
+    $block-gap: 2.4rem;
+    $block-sides: 3rem;
+    $grid-gap: 1.5rem;
     /* =============================== */
 
     width: 66%;
@@ -455,30 +485,27 @@ a {
 
             .bullet-points {
                 list-style-type: disc;
+                column-count: 3;
+
+                li + li {
+                    margin-top: 1.5mm;
+                }
+
+                li {
+                    font-size: 5mm;
+                    color: $accent;
+
+                    span {
+                        font-size: 5mm;
+                        color: $dark;
+                    }
+                }
             }
 
             .list {
                 list-style-type: none;
             }
 
-            li + li {
-                margin-top: 2mm;
-            }
-
-            li {
-                display: flex;
-                align-items: center;
-
-                p {
-                    color: $dark;
-                    margin-left: 5mm;
-                }
-
-                span {
-                    color: color-mix(in srgb, $lightish 65%, $darker);
-                    width: 25mm;
-                }
-            } 
         }
 
         .grid {
@@ -508,7 +535,7 @@ a {
 /* =================================== */
 /* ========== CONTACT INFORMATION ==== */
 /* =================================== */
-$final-gap: 2.3rem;
+$final-gap: 2.6rem;
 $line-height: 11.8mm;
 
 .contact-information {
